@@ -10,6 +10,7 @@
 #import "GithubHttpClient.h"
 
 static NSString * const kTokenCode = @"kTokenCode";
+static NSString * Etag = @"";
 
 @implementation GithubRequest
 
@@ -83,6 +84,15 @@ static NSString * const kTokenCode = @"kTokenCode";
 - (BOOL)useCache
 {
     return NO;
+}
+
++ (void)setEtag:(NSString *)etag {
+    Etag = etag;
+}
+
++ (NSString *)getEtag
+{
+    return Etag;
 }
 
 @end

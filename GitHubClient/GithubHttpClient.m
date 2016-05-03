@@ -84,10 +84,22 @@
         }
     }
     
+    NSString *etag = [[request class] getEtag];
+    if (etag.length > 0) {
+        [_manager.requestSerializer setValue:etag forHTTPHeaderField:@"If-None-Match"];
+        _manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    }
+    
     if (request.acceptResponseContentType) {
         NSMutableSet *acceptSet = [responseSerialization.acceptableContentTypes mutableCopy];
         [acceptSet addObjectsFromArray:request.acceptResponseContentType];
     }
+    
+    NSMutableIndexSet *set = [[responseSerialization acceptableStatusCodes] mutableCopy];
+    [set addIndex:304];
+   
+    responseSerialization.acceptableStatusCodes = set;
+     NSLog(@"set is %@", responseSerialization.acceptableStatusCodes );
     _manager.responseSerializer = responseSerialization;
     
     if (request.requestMethod == GithubRequestMethodGet) {
@@ -98,7 +110,12 @@
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)task.response;
             if ([httpResponse respondsToSelector:@selector(allHeaderFields)]) {
                 NSDictionary *dictionary = [httpResponse allHeaderFields];
-                NSLog(@"%@", [dictionary description]);
+                NSString *etag = dictionary[@"Etag"];
+                if (etag.length > 0) {
+                    if ([request isKindOfClass:[GithubRequest class]]) {
+                        [[request class] setEtag:etag];
+                    }
+                }
                 NSLog(@"status code is%d",httpResponse.statusCode);
             }
             if (request.requestFinishedCallback) {

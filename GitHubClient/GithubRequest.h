@@ -56,4 +56,8 @@ typedef NS_ENUM(NSInteger , GithubRequestSerializerType) {
 
 - (void)cancel;
 
++ (void)setEtag:(NSString *)etag;
+
++ (NSString *)getEtag;
+
 @end
