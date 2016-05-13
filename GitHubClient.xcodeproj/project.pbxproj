@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1429653B1CE6209100AD2546 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1429653A1CE6209100AD2546 /* NetworkManager.m */; };
+		142965401CE628B800AD2546 /* ConstantApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 1429653F1CE628B800AD2546 /* ConstantApi.m */; };
 		31B22259E37E7822F99FB3EE /* Pods_GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5324FCC9FB9398E7F258D85C /* Pods_GitHubClient.framework */; };
 		40255ACD1CD5011400BC0F7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40255ACC1CD5011400BC0F7C /* main.m */; };
 		40255AD01CD5011400BC0F7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40255ACF1CD5011400BC0F7C /* AppDelegate.m */; };
@@ -36,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142965391CE6209100AD2546 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		1429653A1CE6209100AD2546 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		1429653D1CE626A400AD2546 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1429653E1CE628B800AD2546 /* ConstantApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantApi.h; sourceTree = "<group>"; };
+		1429653F1CE628B800AD2546 /* ConstantApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantApi.m; sourceTree = "<group>"; };
 		40255AC81CD5011400BC0F7C /* GitHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40255ACC1CD5011400BC0F7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40255ACE1CD5011400BC0F7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1429653C1CE6266D00AD2546 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				1429653E1CE628B800AD2546 /* ConstantApi.h */,
+				1429653F1CE628B800AD2546 /* ConstantApi.m */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 		3FCB3C5F21BC3018B04AC399 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +133,7 @@
 		40255ACA1CD5011400BC0F7C /* GitHubClient */ = {
 			isa = PBXGroup;
 			children = (
+				1429653C1CE6266D00AD2546 /* General */,
 				40255AFE1CD5045D00BC0F7C /* HttpClient */,
 				40255ACE1CD5011400BC0F7C /* AppDelegate.h */,
 				40255ACF1CD5011400BC0F7C /* AppDelegate.m */,
@@ -126,6 +143,7 @@
 				40255AD71CD5011400BC0F7C /* Assets.xcassets */,
 				40255AD91CD5011400BC0F7C /* LaunchScreen.storyboard */,
 				40255ADC1CD5011400BC0F7C /* Info.plist */,
+				1429653D1CE626A400AD2546 /* PrefixHeader.pch */,
 				40255ACB1CD5011400BC0F7C /* Supporting Files */,
 			);
 			path = GitHubClient;
@@ -160,6 +178,8 @@
 		40255AFE1CD5045D00BC0F7C /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
+				142965391CE6209100AD2546 /* NetworkManager.h */,
+				1429653A1CE6209100AD2546 /* NetworkManager.m */,
 			);
 			name = HttpClient;
 			sourceTree = "<group>";
@@ -353,8 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1429653B1CE6209100AD2546 /* NetworkManager.m in Sources */,
 				40255AD31CD5011400BC0F7C /* ViewController.m in Sources */,
 				40255AD01CD5011400BC0F7C /* AppDelegate.m in Sources */,
+				142965401CE628B800AD2546 /* ConstantApi.m in Sources */,
 				40255ACD1CD5011400BC0F7C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +521,8 @@
 			baseConfigurationReference = BFFB14B87C452ECFBF7EC8E8 /* Pods-GitHubClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SECROOT)GitHubClient/PrefixHeader.pch";
 				INFOPLIST_FILE = GitHubClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.GitHubClient;
@@ -511,6 +535,8 @@
 			baseConfigurationReference = B3F90B7742DF2C2777E1377A /* Pods-GitHubClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SECROOT)GitHubClient/PrefixHeader.pch";
 				INFOPLIST_FILE = GitHubClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zangqilong.GitHubClient;

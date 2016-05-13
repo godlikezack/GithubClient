@@ -41,5 +41,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)option{
+    NSLog(@"url is %@",url);
+    [[NetworkManager shareManager] doAuthorizationWithCode:url.absoluteString success:^(NSDictionary *result) {
+        NSLog(@"%s,line num = %d \n %@",__func__,__LINE__,result);
+        NSString *token=[result objectForKey:@"access_token"];
+        [USER_DEFAULT setObject:token forKey:kAccessToken];
 
+    } fail:^{
+        
+    }];
+    return YES;
+}
 @end

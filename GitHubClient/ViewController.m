@@ -13,6 +13,11 @@
 @end
 
 @implementation ViewController
+- (IBAction)clickLoginBtn:(UIButton *)sender {
+    NSString *finalURL = [NSString stringWithFormat:@"https://github.com/login/oauth/authorize?client_id=%@&scope=%@&redirect_uri=%@", kClientID, @"user,repo", kCallbackUrl];
+    [[UIApplication  sharedApplication]openURL:[NSURL URLWithString:finalURL]];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

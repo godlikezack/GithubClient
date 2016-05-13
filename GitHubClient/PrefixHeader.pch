@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  GitHubClient
+//
+//  Created by zack on 16/5/13.
+//  Copyright © 2016年 臧其龙. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+    #import "ConstantApi.h"
+    #import "NetworkManager.h"
+
+
+    //获取NSUserDefaults
+    #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+    #define USER_ValueForKey(a) [USER_DEFAULT valueForKey:a]
+
+
+#endif
+
+#endif /* PrefixHeader_pch */
