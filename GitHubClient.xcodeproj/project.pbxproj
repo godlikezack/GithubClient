@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142965381CE6079100AD2546 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 142965371CE6079100AD2546 /* NetworkManager.m */; };
 		31B22259E37E7822F99FB3EE /* Pods_GitHubClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5324FCC9FB9398E7F258D85C /* Pods_GitHubClient.framework */; };
 		40255ACD1CD5011400BC0F7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40255ACC1CD5011400BC0F7C /* main.m */; };
 		40255AD01CD5011400BC0F7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40255ACF1CD5011400BC0F7C /* AppDelegate.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142965361CE6079100AD2546 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		142965371CE6079100AD2546 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		40255AC81CD5011400BC0F7C /* GitHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40255ACC1CD5011400BC0F7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40255ACE1CD5011400BC0F7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 		40255AFE1CD5045D00BC0F7C /* HttpClient */ = {
 			isa = PBXGroup;
 			children = (
+				142965361CE6079100AD2546 /* NetworkManager.h */,
+				142965371CE6079100AD2546 /* NetworkManager.m */,
 			);
 			name = HttpClient;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142965381CE6079100AD2546 /* NetworkManager.m in Sources */,
 				40255AD31CD5011400BC0F7C /* ViewController.m in Sources */,
 				40255AD01CD5011400BC0F7C /* AppDelegate.m in Sources */,
 				40255ACD1CD5011400BC0F7C /* main.m in Sources */,
